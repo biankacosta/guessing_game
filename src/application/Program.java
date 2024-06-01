@@ -16,11 +16,18 @@ public class Program {
 		
 		int randomNum = rand.nextInt(upperbond);
 		
-		
 		System.out.println("Guess a number: ");
 		int userNum = sc.nextInt();
 		
+		String enteredNum = "History of entered numbers: ";
+		
+		enteredNum += String.valueOf(userNum);
+		
+		System.out.println(enteredNum);
+		
 		while (userNum != randomNum) {
+			enteredNum += ", ";
+			
 			sc.nextLine();
 			
 			if (userNum > 100+randomNum || userNum < randomNum-100) {
@@ -41,6 +48,9 @@ public class Program {
 			
 			System.out.print("Try again: ");
 			userNum = sc.nextInt();
+			
+			enteredNum += String.valueOf(userNum);
+			System.out.println(enteredNum);
 		}
 		
 		System.out.println("Congratulations! You right!");
